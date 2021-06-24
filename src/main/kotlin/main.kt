@@ -9,7 +9,7 @@ import jetbrains.letsPlot.letsPlot
 import java.awt.Desktop
 import java.io.File
 
-fun main(args: Array<String>) {
+fun main() {
     val inputFileName = "src/main/resources/hash.txt"
     val input = readFileAsLinesUsingBufferedReader(inputFileName).map { it.toInt() }.toIntArray()
     val result = hash(input)
@@ -26,10 +26,26 @@ fun main(args: Array<String>) {
 
 }
 
+/**
+ * Method to hash the input array
+ *
+ * @param input intArray
+ * @return Hashed array
+ */
 fun hash(input: IntArray): IntArray {
     return input.map { it.mod(10007) }.toIntArray()
+    //Since input is an intArray, where the value is the key at the same time
+    //we can return same array as hash function
+    //return input
+
 }
 
+/**
+ * Plot Result Array
+ *
+ * @param result Result Array to Plot
+ * @return Plot
+ */
 fun plot(result: IntArray): Plot {
     val data = mapOf(
         "hash" to List(result.size) { "A" },
@@ -41,6 +57,11 @@ fun plot(result: IntArray): Plot {
     return p
 }
 
+/**
+ * Method to open plot in browser
+ *
+ * @param content Content to open in browser and save in my_plot.html file
+ */
 fun openInBrowser(content: String) {
     val dir = File(System.getProperty("user.dir"), "lets-plot-images")
     dir.mkdir()
