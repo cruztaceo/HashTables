@@ -1,6 +1,5 @@
 import jetbrains.datalore.plot.PlotHtmlExport
 import jetbrains.datalore.plot.PlotHtmlHelper
-import jetbrains.letsPlot.Stat
 import jetbrains.letsPlot.export.ggsave
 import jetbrains.letsPlot.geom.geomHistogram
 import jetbrains.letsPlot.ggsize
@@ -28,7 +27,7 @@ fun main(args: Array<String>) {
 }
 
 fun hash(input: IntArray): IntArray {
-    return input.map { it.mod(1009) }.toIntArray()
+    return input.map { it.mod(10007) }.toIntArray()
 }
 
 fun plot(result: IntArray): Plot {
@@ -38,7 +37,7 @@ fun plot(result: IntArray): Plot {
     )
 
     var p = letsPlot(data) { x = "index" }
-    p += geomHistogram(binWidth = 50) + ggsize(1500, 700)
+    p += geomHistogram(binWidth = 100) + ggsize(1500, 700)
     return p
 }
 
