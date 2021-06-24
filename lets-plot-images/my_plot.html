@@ -1,0 +1,37 @@
+<html lang="en">
+   <head>
+       <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
+   </head>
+   <body>
+          <div id="QVMeOf"></div>
+   <script type="text/javascript" data-lets-plot-script="plot">
+       var plotSpec={
+"mapping":{
+"x":"index"
+},
+"data":{
+},
+"ggsize":{
+"width":1500,
+"height":700
+},
+"kind":"plot",
+"scales":[],
+"layers":[{
+"mapping":{
+},
+"stat":"bin",
+"data":{
+"..count..":[149.0,500.0,500.0,500.0,500.0,500.0,500.0,500.0,500.0,500.0,500.0,500.0,500.0,500.0,500.0,500.0,500.0,483.0,475.0,475.0,418.0,0.0],
+"index":[-10.0,40.0,90.0,140.0,190.0,240.0,290.0,340.0,390.0,440.0,490.0,540.0,590.0,640.0,690.0,740.0,790.0,840.0,890.0,940.0,990.0,1040.0]
+},
+"position":"stack",
+"binwidth":50,
+"geom":"histogram"
+}]
+};
+       var plotContainer = document.getElementById("QVMeOf");
+       LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
+   </script>
+   </body>
+</html>
